@@ -15,12 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-<script>
-  $(document).ready(function() {
-    setTimeout(function(){
-      $('#notice_wrapper').fadeOut("slow", function() {
-        $(this).remove();
-      })
-    }, 4500);
-  });
-</script>
+$(document).ready(function() {
+  setTimeout(function(){
+    $('#notice_wrapper').fadeOut("slow", function() {
+      $(this).remove();
+    })
+  }, 4500);
+});
