@@ -18,6 +18,22 @@
 @import "bootstrap";
 @import 'bootstrap/theme';
 
+* {
+	box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+
+body {
+ 	height: 100%;
+  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
+  background:         linear-gradient(0deg, #4CB8C4 10%, #EAECC6 100%);
+}
+
 #notice_wrapper {
   position: absolute;
   top: 0;
@@ -25,7 +41,7 @@
   z-index: 999;
   background: rgba(135, 216, 211, 0.80);
   .alert, .notice {
-    padding: 2.5rem 0;
+    padding: 1.7rem 0;
     text-align: center;
     margin: 0;
     font-size: 1.25rem;
@@ -36,4 +52,8 @@
 
 #user-navlinks{
   padding-top: 14px;
+}
+
+.jumbotron{
+  background: rgba(255, 255, 255, 0.3);
 }
