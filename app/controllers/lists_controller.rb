@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
+    @lists = List.all
   end
 
   def show
@@ -20,6 +21,16 @@ class ListsController < ApplicationController
     else
       flash.now[:alert] = "There was an error saving the To-do list. Please try again."
       render :new
+    end
+  end
+
+  def destroy
+    if @list.destroy
+      flash[:notice] = "To-do list was deleted."
+      redirect_to lists_path
+    else
+      flash.now[:alert] = "There was an error deleting the To-do list. Please try again."
+      render :show
     end
   end
 
