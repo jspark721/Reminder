@@ -24,6 +24,19 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @list.save
+      flash[:notice] = "To-do list was updated."
+      redirect_to @list
+    else
+      flash.now[:alert] = "There was an error updating the To-do list. Please try again."
+      render :edit
+    end
+  end
+
   def destroy
     if @list.destroy
       flash[:notice] = "To-do list was deleted."
