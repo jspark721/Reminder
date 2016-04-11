@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show]
-  resources :lists
+  resources :lists do
+    resources :items
+  end
 
   authenticated :user do
     root 'users#show', as: :authenticated_root
