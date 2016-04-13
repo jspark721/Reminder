@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = @list.items.create(item_params)
+    @item.list = @list
     redirect_to @list
   end
 

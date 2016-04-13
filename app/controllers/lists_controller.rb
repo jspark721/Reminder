@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lists = List.all
+    @lists = current_user.lists
   end
 
   def show
@@ -14,6 +14,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @list.user = current_user
 
     if @list.save
       flash[:notice] = "To-do list was saved."
@@ -25,9 +26,12 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @lists = current_user.lists
   end
 
   def update
+    @list.assign_attributes(list_params)
+
     if @list.save
       flash[:notice] = "To-do list was updated."
       redirect_to @list
