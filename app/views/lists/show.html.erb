@@ -7,6 +7,8 @@
   <%= render "items/form" %>
 </div>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %> |
-<%= link_to 'Back', lists_path %>
+<div class="links">
+  <%= link_to 'Edit', edit_list_path(@list) %> |
+  <%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %> |
+  <%= link_to 'Back', lists_path %>
+</div>
