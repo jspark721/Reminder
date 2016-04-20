@@ -23,6 +23,7 @@ gem 'figaro'
 gem 'pry'
 gem 'devise'
 gem 'faker'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug'
