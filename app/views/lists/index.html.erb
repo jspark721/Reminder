@@ -1,7 +1,7 @@
 <% @lists.each do |list| %>
   <div class="index_row clearfix">
-    <h2><%= link_to list.title, list %></h2>
-    <p><%= list.description %></p>
+    <h2 class="list_title"><%= link_to list.title, list %></h2>
+    <p class="description"><%= list.description %></p>
   </div>
 <% end %>
 

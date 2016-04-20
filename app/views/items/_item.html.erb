@@ -1,6 +1,7 @@
-<p><%= item.content %>
+<div class="item">
+  <p><%= item.content %>
   <%= link_to "", list_item_path(@list,item.id), method: :delete, class: 'glyphicon glyphicon-ok' %>
   <small>
-    <%= item.days_left %> days left to finish!
+    <i><%= item.days_left %> days left to finish!</i>
   </small>
-</p>
+</div>

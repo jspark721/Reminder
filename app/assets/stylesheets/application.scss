@@ -18,20 +18,90 @@
 @import "bootstrap";
 @import 'bootstrap/theme';
 
-* {
-	box-sizing: border-box;
-}
-html {
-  height: 100%;
-}
+$white_opaque: rgba(250, 250, 250, .3);
+$dark: #668fca;
 
 body {
- 	height: 100%;
-  background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:         linear-gradient(0deg, #4CB8C4 10%, #EAECC6 100%);
+ height: 100%;
+ background: #83a4d4; /* fallback for old browsers */
+ background: -webkit-linear-gradient(to left, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to left, #83a4d4 , #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.row {
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.container {
+	width: 50%;
+	max-width: 750px;
+	background: $white_opaque;
+	margin: 4em;
+	border-radius: 7px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	padding: 1em 0;
+}
+
+.jumbotron{
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#items_wrapper {
+	.row {
+		width: 100%;
+		border-top: 1px solid rgba(250,250,250, .3);
+		border-bottom: 1px solid rgba(250,250,250, .3);
+  }
+  .item {
+  width: 80%;
+  float: left;
+    p {
+      margin: 0;
+      padding: 1em;
+      color: $dark;
+      font-weight: 100;
+      font-size: 1.2em;
+    }
+    i {
+      color: white;
+    }
+  }
+}
+
+.list_title {
+  color: white;
+  font-weight: 700;
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  margin: 0;
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+}
+
+.description {
+  font-size:0.9em;
+  color: $dark;
+  font-weight: 100;
+}
+
+.links {
+  display: block;
+  margin: 1.5em auto;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size:0.9em;
+  a {
+    color: white;
+  }
 }
 
 #notice_wrapper {
@@ -39,7 +109,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(135, 216, 211, 0.80);
+  background: rgba(140, 178, 220, 0.7);
   .alert, .notice {
     padding: 1.7rem 0;
     text-align: center;
@@ -52,8 +122,4 @@ body {
 
 #user-navlinks{
   padding-top: 14px;
-}
-
-.jumbotron{
-  background: rgba(255, 255, 255, 0.3);
 }

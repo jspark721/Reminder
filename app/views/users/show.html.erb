@@ -1,7 +1,7 @@
-<h1>Welcome, <%= current_user.name %>!</h1>
-Goal without a plan is just a wish. Stop waiting, & start doing!<br />
-Let's get things done!
-<br /><br />
+<h1 class="list_title">Welcome, <%= current_user.name %>!</h1>
+<p class="description"><i>Goal without a plan is just a wish. Stop waiting, & start doing!<br />
+Let's get things done!</p></i>
+
 <div class="links">
   <%= link_to "Create a new To-Do List", new_list_path %><br />
   <%= link_to "View all your To-Do Lists", lists_path %>
