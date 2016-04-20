@@ -1,14 +1,23 @@
-<h2 class="list_title"><%= @list.title%></h2>
-<h4 class="description"><%= @list.description%></h4>
+<% if current_user == @list.user %>
+  <h2 class="list_title"><%= @list.title%></h2>
+  <h4 class="description"><%= @list.description%></h4>
 
-<div id ="items_wrapper">
-  <%= render @list.items %>
+  <div id ="items_wrapper">
+    <%= render @list.items %>
 
-  <%= render "items/form" %>
-</div>
+    <%= render "items/form" %>
+  </div>
 
-<div class="links">
-  <%= link_to 'Edit', edit_list_path(@list) %> |
-  <%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %> |
-  <%= link_to 'Back', lists_path %>
-</div>
+  <div class="links">
+    <%= link_to 'Edit', edit_list_path(@list) %> |
+    <%= link_to 'Delete', list_path(@list), method: :delete, data: { confirm: "Are you sure?" } %> |
+    <%= link_to 'Back', lists_path %>
+  </div>
+<% else %>
+  <p class="description">
+    Sorry, this to-do list is <b>private</b> to the list creator
+  </p>
+  <div class="links">
+    <%= link_to 'Go Back', lists_path %>
+  </div>
+<% end %>
