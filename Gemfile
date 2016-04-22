@@ -23,6 +23,8 @@ gem 'figaro'
 gem 'pry'
 gem 'devise'
 gem 'faker'
+gem 'whenever', :require => false
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug'

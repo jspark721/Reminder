@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :lists
+
+  def serialize
+    hash = {}
+    attributes.each { |key, val| hash[key] = val }
+    hash
 end
