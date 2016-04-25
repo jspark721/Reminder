@@ -17,6 +17,13 @@ class ItemsController < ApplicationController
     redirect_to @list
   end
 
+  def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @item }
+    end
+  end
+
   private
 
   def set_list

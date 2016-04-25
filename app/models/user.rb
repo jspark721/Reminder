@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
     hash = {}
     attributes.each { |key, val| hash[key] = val }
     hash
+  end
 end
