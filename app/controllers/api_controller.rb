@@ -6,8 +6,8 @@ class ApiController < ApplicationController
   private
 
   def authenticated?
-    authenticate_or_request_with_http_basic do |email, password|
-      resource = User.find_by_email(email)
+    authenticate_or_request_with_http_token do |token, options|
+      ApiKey.exists?(auth_token: token)
     end
   end
 
