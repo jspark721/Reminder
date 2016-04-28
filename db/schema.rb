@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428043002) do
+ActiveRecord::Schema.define(version: 20160428064609) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "auth_token"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20160428043002) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
+    t.string   "username"
     t.string   "auth_token"
   end
 
