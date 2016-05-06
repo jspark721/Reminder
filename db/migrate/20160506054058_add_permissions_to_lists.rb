@@ -1,5 +1,5 @@
 class AddPermissionsToLists < ActiveRecord::Migration
   def change
-    change_column :lists, :permissions, :string, default: "private"
+    add_column :lists, :permissions, :integer
   end
 end
