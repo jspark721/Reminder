@@ -5,4 +5,5 @@ class List < ActiveRecord::Base
   before_save { self.permissions ||= :closed }
 
   enum permissions: [:closed, :open, :viewable]
+
 end
