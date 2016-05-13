@@ -7,7 +7,7 @@ class Api::ListsController < ApiController
 
   def create
     list = List.new(list_params)
-    
+
     authorize list
 
     list.user = current_user
@@ -33,6 +33,7 @@ class Api::ListsController < ApiController
   def destroy
     begin
       list = List.find(params[:id])
+      authorize list
       list.destroy
 
       render json: {}, status: :no_content
