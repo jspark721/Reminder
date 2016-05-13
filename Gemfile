@@ -25,12 +25,12 @@ gem 'devise'
 gem 'faker'
 gem 'whenever', :require => false
 gem 'active_model_serializers'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
   gem 'shoulda'
-  gem 'faker'
   gem 'factory_girl_rails'
 end
