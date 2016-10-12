@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428043002) do
+ActiveRecord::Schema.define(version: 20160506054058) do
 
   create_table "api_keys", force: :cascade do |t|
     t.string   "auth_token"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(version: 20160428043002) do
   create_table "items", force: :cascade do |t|
     t.string   "content"
     t.integer  "list_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "completed",  default: false
   end
 
   add_index "items", ["list_id"], name: "index_items_on_list_id"
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160428043002) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "permissions"
   end
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id"
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160428043002) do
     t.string   "auth_token"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
